@@ -1,0 +1,1 @@
+/// <reference path="assets-main.d.ts" />
