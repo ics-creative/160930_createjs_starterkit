@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "baseUrl": "./",
+    "inlineSources": true,
+    "paths": {
+      "assets-animate": ["./typings/assets-animate/"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "assets"
+  ]
+}
