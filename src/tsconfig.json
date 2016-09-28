@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "inlineSources": true,
+    "paths": {
+      "project-assets": ["./typings/createjs-assets/"],
+      "particlejs": ["./typings/particlejs/"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "assets"
+  ]
+}
