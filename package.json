@@ -1,0 +1,31 @@
+{
+  "name": "createjs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "author": "Nozomi Nohara <nozomi.nohara@ics-web.jp>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/createjs": "0.0.29"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^2.2.4",
+    "browser-sync": "^2.16.0",
+    "createjs-def": "git://github.com/ics-nohara/createjs-def.git",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-webpack": "^1.5.0",
+    "mkdirp": "^0.5.1",
+    "require-dir": "^0.3.0",
+    "rimraf": "^2.5.4",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2"
+  }
+}
