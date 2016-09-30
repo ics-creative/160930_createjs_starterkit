@@ -1,13 +1,12 @@
 declare var images;
 declare var ss;
 
-
 export class LoadAsset {
   constructor() {
 
   }
 
-  private loader = createjs.LoadQueue;
+  private loader:any;
 
   private callback:Function;
 
