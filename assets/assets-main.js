@@ -1,6 +1,11 @@
 (function (lib, img, cjs, ss) {
 
 var p; // shortcut to reference prototypes
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
 
 // library properties:
 lib.properties = {
@@ -9,18 +14,75 @@ lib.properties = {
 	fps: 24,
 	color: "#FFFFFF",
 	opacity: 1.00,
+	webfonts: {},
 	manifest: [
-		{src:"images/assets_main_atlas_.png?1475069264904", id:"assets_main_atlas_"}
+		{src:"images/assets_main_atlas_.png", id:"assets_main_atlas_"}
 	]
 };
 
 
 
 lib.ssMetadata = [
-		{name:"assets_main_atlas_", frames: [[0,322,320,320],[322,0,320,320],[322,322,320,320],[0,644,320,320],[644,322,320,320],[322,644,320,320],[644,0,320,320],[0,0,320,320]]}
+		{name:"assets_main_atlas_", frames: [[0,0,320,320],[0,322,320,320],[0,644,320,320],[322,0,320,320],[644,0,320,320],[322,322,320,320],[322,644,320,320],[644,322,320,320]]}
 ];
 
 
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {	//we have found an element in the list		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != cur) { //insert all it's children just before it		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {	//append element and it's parents in the array		
+		cur = textInst;		
+		while(cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
 // symbols:
 
 
@@ -123,27 +185,7 @@ lib.ssMetadata = [
 p.nominalBounds = new cjs.Rectangle(-33,-42,320,320);
 
 
-(lib.MyAsset2 = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
-
-	// レイヤー 1
-	this.text = new cjs.Text("アセット2だよー", "14px 'Osaka'", "#315479");
-	this.text.lineHeight = 20;
-	this.text.lineWidth = 100;
-	this.text.parent = this;
-	this.text.setTransform(85,157);
-
-	this.shape = new cjs.Shape();
-	this.shape.graphics.f("#FFFFFF").s().p("A1OYIMAAAgwPMAqdAAAMAAAAwPg");
-	this.shape.setTransform(136,154.5);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape},{t:this.text}]}).wait(1));
-
-}).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(0,0,272,309);
-
-
-(lib.MyAsset1 = function(mode,startPosition,loop) {
+(lib.MyAsset = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// レイヤー 1
@@ -165,14 +207,14 @@ p.nominalBounds = new cjs.Rectangle(-38.6,-44.5,320,320);
 	this.initialize(mode,startPosition,loop,{});
 
 	// レイヤー 1
-	this.instance = new lib.MyAsset1();
+	this.instance = new lib.MyAsset();
 	this.instance.parent = this;
-	this.instance.setTransform(160,-105.9,1,1,0,0,0,160,160);
+	this.instance.setTransform(166,169.1,1,1,0,0,0,160,160);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(26));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(236.4,-110.4,320,320);
+p.nominalBounds = new cjs.Rectangle(242.4,164.6,320,320);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{});
 var lib, images, createjs, ss;

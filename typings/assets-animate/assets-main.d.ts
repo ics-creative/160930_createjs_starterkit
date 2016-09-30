@@ -46,20 +46,14 @@ declare module lib {
 		instance_7: frame0008;
 	}
 
-	export class MyAsset2 extends createjs.MovieClip {
-		nominalBounds: createjs.Rectangle;
-		text: createjs.Text;
-		shape: createjs.Shape;
-	}
-
-	export class MyAsset1 extends createjs.MovieClip {
+	export class MyAsset extends createjs.MovieClip {
 		nominalBounds: createjs.Rectangle;
 		hamham: MyHamster;
 	}
 
 	export class assetsmain extends createjs.MovieClip {
 		nominalBounds: createjs.Rectangle;
-		instance: MyAsset1;
+		instance: MyAsset;
 	}
 
 }
