@@ -1,4 +1,4 @@
-import MyAsset = lib.MyAsset1;
+import MyAsset = lib.MyAsset;
 import {LoadAsset} from "./load-asset";
 
 var stage = null;
