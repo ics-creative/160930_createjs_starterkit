@@ -1,0 +1,9 @@
+dist/**/*
+!dist/index.html
+.idea
+.DS_Store
+Thumbs.db
+src/**/*.js
+src/**/*.js.map
+*.log
+node_modules
