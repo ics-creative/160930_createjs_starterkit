@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "gulp watch",
+    "start": "gulp watch",
     "watch": "gulp watch",
     "build": "gulp build"
   },
@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-run-sequence": "^0.3.2",
     "gulp-webpack": "^1.5.0",
     "mkdirp": "^0.5.1",
     "require-dir": "^0.3.0",
