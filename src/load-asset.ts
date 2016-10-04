@@ -6,7 +6,7 @@ export class LoadAsset {
 
   }
 
-  private loader:any;
+  private loader:createjs.LoadQueue;
 
   private callback:Function;
 
