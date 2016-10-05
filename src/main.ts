@@ -18,7 +18,7 @@ function startCreateJS() {
 
   // フレームレートの設定
   createjs.Ticker.framerate = lib.properties.fps;
-  // requestAnimationFrameに従った呼び出し
+  // フレームレートに従う
   createjs.Ticker.timingMode = createjs.Ticker.TIMEOUT;
   // 定期的に呼ばれる関数を登録
   createjs.Ticker.addEventListener("tick", handleTick);
