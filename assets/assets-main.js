@@ -23,7 +23,7 @@ lib.properties = {
 
 
 lib.ssMetadata = [
-		{name:"assets_main_atlas_", frames: [[0,0,320,320],[0,322,320,320],[0,644,320,320],[322,0,320,320],[644,0,320,320],[322,322,320,320],[322,644,320,320],[644,322,320,320]]}
+		{name:"assets_main_atlas_", frames: [[322,644,320,320],[644,322,320,320],[0,0,320,320],[0,322,320,320],[0,644,320,320],[322,0,320,320],[644,0,320,320],[322,322,320,320]]}
 ];
 
 
@@ -191,9 +191,9 @@ p.nominalBounds = new cjs.Rectangle(-33,-42,320,320);
 	// レイヤー 1
 	this.hamham = new lib.MyHamster();
 	this.hamham.parent = this;
-	this.hamham.setTransform(121.6,161.3,1,1,0,0,0,127.2,163.8);
+	this.hamham.setTransform(-5.6,-2.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.hamham).to({regX:0,regY:0,x:537.7,y:-16.7},24).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.hamham).to({x:537.7,y:-16.7},24).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-38.6,-44.5,320,320);
@@ -209,12 +209,12 @@ p.nominalBounds = new cjs.Rectangle(-38.6,-44.5,320,320);
 	// レイヤー 1
 	this.instance = new lib.MyAsset();
 	this.instance.parent = this;
-	this.instance.setTransform(166,169.1,1,1,0,0,0,160,160);
+	this.instance.setTransform(160,160,1,1,0,0,0,160,160);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(26));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(242.4,164.6,320,320);
+p.nominalBounds = new cjs.Rectangle(236.4,155.5,320,320);
 
 })(lib = lib||{}, images = images||{}, createjs = createjs||{}, ss = ss||{});
 var lib, images, createjs, ss;
