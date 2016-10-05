@@ -17,7 +17,7 @@ function startCreateJS() {
   stage.addChild(asset);
 
   // フレームレートの設定
-  createjs.Ticker.setFPS(lib.properties.fps);
+  createjs.Ticker.framerate = lib.properties.fps;
   // requestAnimationFrameに従った呼び出し
   createjs.Ticker.timingMode = createjs.Ticker.TIMEOUT;
   // 定期的に呼ばれる関数を登録
@@ -27,5 +27,4 @@ function startCreateJS() {
 function handleTick() {
   // 描画を更新する
   stage.update();
-  console.log(asset.hamham.x);
 }
