@@ -21,11 +21,11 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-run-sequence": "^0.3.2",
     "gulp-webpack": "^1.5.0",
     "mkdirp": "^0.5.1",
     "require-dir": "^0.3.0",
     "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2",
     "ts-loader": "^0.8.2",
     "typescript": "^2.0.3",
     "webpack": "^1.13.2"

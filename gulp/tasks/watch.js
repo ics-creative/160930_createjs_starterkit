@@ -1,7 +1,7 @@
 "use strict";
 
 const gulp = require('gulp');
-const runSequence = require('gulp-run-sequence');
+const runSequence = require('run-sequence');
 // browser-syncのプラグインの読み込み
 var browserSync = require("browser-sync");
 
