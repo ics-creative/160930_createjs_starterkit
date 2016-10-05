@@ -1,18 +1,24 @@
-# CreateJSのための高速なトライアル＆エラー環境の作り方
+# CreateJS + TypeScript StarterKit
 
 
-## インストール
+
+## Demo
+
+https://youtu.be/tdMFaTK3LjQ
+
+
+## Requirement
+- Node.js >= v4.5.0
+
+## Installation
 
 ```
 npm install
-
 ```
 
 
-
-## 実行
+## Usage
 
 ```
 npm start
-
 ```
